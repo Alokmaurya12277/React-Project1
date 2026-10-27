@@ -16,7 +16,7 @@ function RecipePage() {
       console.log(data.data);
       setRecipe(data.data)
 
-    } catch (error) {
+    } catch (error) { 
       setErrorMsg("Could not load recipe details. Please try again.")
     }
     setLoding(false)

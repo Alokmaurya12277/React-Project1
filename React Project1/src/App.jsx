@@ -14,8 +14,7 @@ function App() {
         <Route path='/recipe/:id' element={<RecipePage/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
-
-    </div>
+    </div> 
 
   )
 }

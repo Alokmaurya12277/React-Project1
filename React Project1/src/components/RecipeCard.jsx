@@ -9,13 +9,14 @@ function RecipeCard({ recipe }) {
     name,
     cuisine,
     difficulty,
-    rating,
+    rating, 
   } = recipe;
   const totalTime = prepTimeMinutes + cookTimeMinutes;
 
   return (
     <Link
-      to={`/recipe/${id}`}
+      to={`/recipe/${id}`}    // URL bna rha hai jb ye url bna to recipe page jaisa url hai use call kr do
+      
       className="bg-card border border-border rounded-md hover:border-accent overflow-hidden flex flex-col"
     >
       <img src={image} alt={name} className="h-48 w-full object-cover" />
