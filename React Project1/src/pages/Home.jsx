@@ -1,16 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import RecipeCard from "../components/RecipeCard";
+import UseLoading from "../hooks/UseLoading";
 
 function Home() {
   const [recipes,setRecipe] = useState([])
   const [total,setTotal] = useState(0)
-  const [loading,setLoading] = useState(true)
+  // const [loading,setLoading] = useState(true)
   const [errorMsg,setErrorMsg] = useState("")
   const [searchQuery,setSeachQuery] = useState("")
 
+  const { loading, startLoading, stopLoading} = UseLoading()
+
   async function fetchRecipes(skipCount,query) {
-    setLoading(true)
+    startLoading(true)
     try {
       let url = `https://dummyjson.com/recipes?limit=6&skip=${skipCount}`;
       if(query){
@@ -25,7 +28,7 @@ function Home() {
     } catch (error) {
       setErrorMsg("Error fetching products please try agin")
     } 
-    setLoading(false)
+    stopLoading(false)
   }
 
 useEffect(() =>{
